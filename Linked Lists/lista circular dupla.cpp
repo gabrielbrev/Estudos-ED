@@ -112,6 +112,7 @@ void insert(dnodePtr *head, int value){
 }
 
 bool remove(dnodePtr *head, int value){
+//Retorna true caso encontre e remova o nó desejado
     if(*head != NULL){
         dnodePtr aux = *head;
 
@@ -154,36 +155,6 @@ bool remove(dnodePtr *head, int value){
         return true;   
     }
     return false;
-}
-
-void removenotbool(dnodePtr *head, int value){
-    if(*head != NULL){
-        dnodePtr aux = *head;
-        if(*head == (*head)->next){
-            *head = NULL;
-            delete(aux);
-        }
-        else{
-            if((*head)->data == value){
-                dnodePtr aux2 = *head;
-                aux = aux->prev;
-                *head = (*head)->next;
-                (*head)->prev = aux;
-                aux->next = *head;
-                delete(aux2);
-            }
-            else{
-                do{
-                    aux = aux->next;
-                }while(aux != *head && aux->data != value);
-                if(aux->data == value){
-                    aux->prev->next = aux->next;
-                    aux->next->prev = aux->prev;
-                    delete(aux);  
-                }
-            }  
-        }
-    }
 }
 
 int main(){
