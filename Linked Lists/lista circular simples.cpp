@@ -21,7 +21,7 @@ void printList(nodePtr *head){
     cout << "]\n\n";
 }
 
-void printListAdresses(nodePtr *head){
+void printListAddresses(nodePtr *head){
     cout << "-----------------------------------------\n";
     if(*head != NULL){
         nodePtr aux = *head;
@@ -128,7 +128,7 @@ int main(){
         int x = rand() % 100 + 1;
         cout << x << endl;
         insert(&list, x);
-        printListAdresses(&list);
+        printListAddresses(&list);
     }
     printList(&list);
 

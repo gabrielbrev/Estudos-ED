@@ -18,7 +18,7 @@ void printList(dnodePtr *head){
     cout << "]\n";
 }
 
-void printListAdresses(dnodePtr *head){
+void printListAddresses(dnodePtr *head){
     cout << "----------------------------------------------------\n";
     for(dnodePtr aux = *head; aux != NULL; aux = aux->next){
         cout << aux->data << "\t" << aux->prev << "\t";
@@ -118,13 +118,13 @@ int main(){
         int x = rand() % 100;
         insert(&list, x);
     }
-    printListAdresses(&list);
+    printListAddresses(&list);
 
     while(true){
         int x;
         cin >> x;
         remove(&list, x);
-        printListAdresses(&list);    
+        printListAddresses(&list);    
     }
     
 
